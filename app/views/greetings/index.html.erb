@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Greetings</h1>
+<h1>あいさつを投稿しよう</h1>
+<p>現在のあいさつ数は<%= @greetings.count %>です。</p>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Message</th>
+      <th>名前</th>
+      <th>メッセージ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +17,9 @@
       <tr>
         <td><%= greeting.name %></td>
         <td><%= greeting.message %></td>
-        <td><%= link_to 'Show', greeting %></td>
-        <td><%= link_to 'Edit', edit_greeting_path(greeting) %></td>
-        <td><%= link_to 'Destroy', greeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '表示', greeting %></td>
+        <td><%= link_to '編集', edit_greeting_path(greeting) %></td>
+        <td><%= link_to '削除', greeting, method: :delete, data: { confirm: '削除してもいい？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Greeting', new_greeting_path %>
+<%= link_to '新規あいさつを作成', new_greeting_path %>
